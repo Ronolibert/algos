@@ -1,6 +1,7 @@
+// Cons: too expesive, takes N^2 array accesses to process sequence of N union commands to N objects
 class QuickFindUF {
   constructor (n) {
-
+    // dynamically make the storage array based on value given during instantiation
     this.storage = (() => {
       let arr = [];
       for (var i = 0; i < n; i++) {
@@ -25,3 +26,4 @@ class QuickFindUF {
     }
   }
 }
+
