@@ -36,3 +36,37 @@ class LinkedQueue {
     }
   }
 }
+
+class ArrayQueue {
+  constructor () {
+    this.storage = [];
+    this.first = null;
+    this.size = 0;
+  }
+
+  isEmpty () {
+    return this.first === null;
+  }
+
+  enqueue (value) {
+    if (this.isEmpty()) {
+      this.first = 0
+    }
+    this.storage[this.size++] = value;
+  }
+
+  dequeue () {
+    if (this.isEmpty()) {
+      return;
+    }
+    let temp = this.storage[this.first];
+    delete this.storage[this.first];
+    this.size--;
+    this.first++;
+    return temp;
+  }
+
+  size () {
+    return this.size;
+  }
+}
