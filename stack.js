@@ -38,17 +38,15 @@ class ArrayStack {
   }
 
   push (value) {
-    this.storage.push(value);
-    this.size++;
+    this.storage[this.size++] = value;
   }
 
   pop () {
     if (!this.storage.length) {
       return;
     }
-    let tenp = this.storage[this.storage.length - 1];
-    delete this.storage[this.storage.length - 1];
-    this.size--;
+    let temp = this.storage[this.size - 1];
+    delete this.storage[--this.size];
     return temp;
   }
 
