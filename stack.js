@@ -26,3 +26,34 @@ class LinkedStack {
     return lastString;
   }
 }
+
+class ArrayStack {
+  constructor () {
+    this.storage = [];
+    this.size = 0;
+  }
+
+  isEmpty () {
+    return this.storage.length === 0;
+  }
+
+  push (value) {
+    this.storage.push(value);
+    this.size++;
+  }
+
+  pop () {
+    if (!this.storage.length) {
+      return;
+    }
+    let tenp = this.storage[this.storage.length - 1];
+    delete this.storage[this.storage.length - 1];
+    this.size--;
+    return temp;
+  }
+
+  size () {
+    return this.size;
+  }
+
+}
