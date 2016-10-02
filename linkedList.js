@@ -111,6 +111,39 @@ class LinkedList {
     }
   }
 
+  nthToLastElement (n) {
+    let current = this.head;
+    let index = 0;
+
+    while (current) {
+      if (index === n - 1) {
+        return current.value;
+      } else {
+        current = current.next;
+        index++;
+      }
+    }
+  }
+
+  makeLinkedListRange (from, to) {
+    for (let i = from; from <= to; from++) {
+      this.addToTail(from);
+    }
+    return this;
+  }
+
+  printKthToLast(head, k) {
+    if (head === null) {
+      return 0;
+    }
+
+    let index = printKthToLast(head.next, k) + 1;
+    if (index === k) {
+      console.log(k + 'th to last node is ' + head.value);
+    }
+
+    return index;
+  }
 
 }
 
@@ -120,3 +153,4 @@ class Node {
     this.next = null;
   }
 }
+
