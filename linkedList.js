@@ -145,6 +145,24 @@ class LinkedList {
     return index;
   }
 
+  nthToLastNoRecursion (n) {
+    let p1 = this.head;
+    let p2 = this.head;
+
+    for (let i = 0; i < n; i++) {
+      if (p1 === null) {
+        return null;
+      }
+      p1 = p1.next;
+    }
+
+    while (p1) {
+      p1 = p1.next;
+      p2 = p2.next;
+    }
+
+    return p2;
+  }
 }
 
 class Node {
