@@ -163,6 +163,34 @@ class LinkedList {
 
     return p2;
   }
+
+  deleteNode (val) {
+    let current = this.head;
+
+    while (current) {
+      if (current.value = val) {
+        current.value = current.next.value;
+        current.next = current.next.next;
+        return;
+      } else {
+        current = current.next;
+      }
+    }
+
+    return false;
+  }
+
+  deleteNodev2 (node) {
+    if (node === null || node.next === null) {
+      return false;
+    }
+    let next = node.next;
+    node.value = next.value;
+    node.next = next.next;
+    return true;
+  }
+
+
 }
 
 class Node {
